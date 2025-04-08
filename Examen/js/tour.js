@@ -19,7 +19,7 @@ infospot1.element.innerHTML = `
 panorama.add(infospot1);
 
 // Infospot 2: Audio ambiental
-var infospot2 = new PANOLENS.Infospot(50, PANOLENS.DataImage.Info);
+var infospot2 = new PANOLENS.Infospot(30, 'imagenes/audio.png');
 infospot2.position.set(-233, -500, 500);
 infospot8.addHoverText('Lorem ipsum dolor sit amet', 0);
 infospot8.element.innerHTML = '<div style="color:#000; border-radius: 5px; padding: 90px; font-size: 14px; width: 200px;"><audio controls><source src="media/bosque.mp3" type="audio/mpeg"></audio></div>';
@@ -31,7 +31,7 @@ infospot3.position.set(500, 75, -250);
 infospot3.addHoverText('Lorem ipsum dolor sit amet');
 infospot3.element.innerHTML = `
     <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Mnhf6DnECWc?si=kXKvtpxTkaQGUqb-"></iframe>
+        <iframe width="500" height="400" src="https://www.youtube.com/embed/Mnhf6DnECWc?si=kXKvtpxTkaQGUqb-"></iframe>
     </div>`;
 panorama.add(infospot3);
 
@@ -62,7 +62,7 @@ infospot6.position.set(-500, -20, -400);
 infospot6.addHoverText('Lorem ipsum dolor sit amet');
 infospot6.element.innerHTML = `
     <div>
-        <iframe width="100" height="50" src="https://www.youtube.com/embed/6e6WvWYzyUc?si=A_HwueNSb9GweuEp"></iframe>
+        <iframe width="500" height="400" src="https://www.youtube.com/embed/6e6WvWYzyUc?si=A_HwueNSb9GweuEp"></iframe>
     </div>`;
 panorama.add(infospot6);
 
