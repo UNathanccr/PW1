@@ -8,7 +8,7 @@ container = document.querySelector('#container_principal');
 panorama = new PANOLENS.ImagePanorama('imagenes/oficina.jpg');
 
 // Infospot 1: Texto de bienvenida
-var infospot1 = new PANOLENS.Infospot(30, PANOLENS.DataImage.Info);
+var infospot1 = new PANOLENS.Infospot(40, PANOLENS.DataImage.Info);
 infospot1.position.set(-371, -187, -500);
 infospot1.addHoverText('Bienvenido al tour virtual del <br>Lake District National Park<', -60);
 infospot1.element.innerHTML = `
@@ -18,14 +18,18 @@ infospot1.element.innerHTML = `
 panorama.add(infospot1);
 
 // Infospot 2: Audio Sonidos del bosque (Centro del Lago)
-var infospot2 = new PANOLENS.Infospot(30, PANOLENS.DataImage.Info);
+var infospot2 = new PANOLENS.Infospot(40, PANOLENS.DataImage.Info);
 infospot2.position.set(-233, -500, 500);
 infospot2.addHoverText('', 0);
-infospot2.element.innerHTML = '<div style="color:#000; border-radius: 5px; padding: 90px; font-size: 14px; width: 200px;"><audio controls><source src="media/bosque.mp3" type="audio/mpeg"></audio></div>';
+infospot2.element.innerHTML = `
+  <div style="color:#000; border-radius: 5px; padding: 90px; font-size: 14px; width: 200px;">
+    <audio controls><source src="media/bosque.mp3" type="audio/mpeg"></audio>
+  </div>
+  `;
 panorama.add(infospot2);
 
 // Infospot 3: Video sobre Senderismo
-var infospot3 = new PANOLENS.Infospot(30, 'imagenes/video.png');
+var infospot3 = new PANOLENS.Infospot(40, 'imagenes/video.png');
 infospot3.position.set(500, 75, -250);
 infospot3.addHoverText('Beneficios del senderismo', 0);
 infospot3.element.innerHTML = `
@@ -35,9 +39,22 @@ infospot3.element.innerHTML = `
 panorama.add(infospot3);
 
 // Infospot 4: Imagen Sobre los Alces 
-var infospot4 = new PANOLENS.Infospot(30, 'imagenes/animales.png');
+var infospot4 = new PANOLENS.Infospot(40, 'imagenes/animales.png');
 infospot4.position.set(-500, -138, -25);
 infospot4.addHoverText('Fauna común en el recorrido', 0);
+infospot4.element.innerHTML = `
+  <div style="background-color: rgba(0,0,0,0.7); color:#fff; padding: 15px; border-radius: 8px; max-width: 300px; font-size: 14px; line-height: 1.6;">
+    <img src="imagenes/alce.jpg" alt="Alce" style="max-width: 100%; border-radius: 10px;">
+    <strong>Animales que podras encontrar:</strong><br>
+    Los Alces son una de las especies más emblemáticas del parque, conocidos por su gran tamaño y cuernos impresionantes. 
+  </div>
+`;
+panorama.add(infospot4);
+
+// Infospot 5: Información geológica (terminar de agregar)
+var infospot5 = new PANOLENS.Infospot(40, 'imagenes/favicon.png');
+infospot5.position.set(372, -57, -500);
+infospot5.addHoverText('Lorem ipsum dolor sit amet', 0);
 infospot5.element.innerHTML = `
   <div style="background-color: rgba(0,0,0,0.7); color:#fff; padding: 15px; border-radius: 8px; max-width: 300px; font-size: 14px; line-height: 1.6;">
     <strong>Formación Geológica:</strong><br>
@@ -45,18 +62,11 @@ infospot5.element.innerHTML = `
     <br><br>
     Las montañas y valles fueron esculpidos por antiguos glaciares, dejando paisajes únicos con lagos profundos y cumbres escarpadas.
   </div>
-`;
-panorama.add(infospot4);
-
-// Infospot 5: Información geológica (terminar de agregar)
-var infospot5 = new PANOLENS.Infospot(30, 'imagenes/clima.png');
-infospot5.position.set(372, -57, -500);
-infospot5.addHoverText('Lorem ipsum dolor sit amet', 0);
-infospot5.element.innerHTML = '<div style="background-color: rgba(0,0,0,0.7); color:#fff; padding: 10px; border-radius: 5px;">Información sobre la formación geológica del lugar.</div>';
+  `;
 panorama.add(infospot5);
 
 // Infospot 6: Video sobre actividades
-var infospot6 = new PANOLENS.Infospot(30, 'imagenes/senderismo.png');
+var infospot6 = new PANOLENS.Infospot(40, 'imagenes/senderismo.png');
 infospot6.position.set(-500, -20, -400);
 infospot6.addHoverText('Lorem ipsum dolor sit amet', 0);
 infospot6.element.innerHTML = `
@@ -66,7 +76,7 @@ infospot6.element.innerHTML = `
 panorama.add(infospot6);
 
 // Infospot 7: Rutas en PDF
-var infospot7 = new PANOLENS.Infospot(30, 'imagenes/info2.png');
+var infospot7 = new PANOLENS.Infospot(40, 'imagenes/info2.png');
 infospot7.position.set(-235, -122, 500);
 infospot7.addHoverText('Ver Mapa', 0);
 infospot7.element.innerHTML = `    
@@ -76,28 +86,27 @@ infospot7.element.innerHTML = `
 panorama.add(infospot7);
 
 // Infospot 8: Audio sobre sonidos
-var infospot8 = new PANOLENS.Infospot(30, "imagenes/audio.png");
+var infospot8 = new PANOLENS.Infospot(40, "imagenes/audio.png");
 infospot8.position.set(-24, -411, 500);
 infospot8.addHoverText('Lorem ipsum dolor sit amet', 0);
 infospot8.element.innerHTML = '<div style="color:#000; border-radius: 5px; padding: 90px; font-size: 14px; width: 200px;"><audio controls><source src="media/bosque.mp3" type="audio/mpeg"></audio></div>';
 panorama.add(infospot8);
 
 // Infospot 9: Vista desde el Lago a la Montaña
-var infospot9 = new PANOLENS.Infospot(30, "imagenes/binoculares.png");
+var infospot9 = new PANOLENS.Infospot(40, "imagenes/binoculares.png");
 infospot9.position.set(-501, -316, 303);
 infospot9.addHoverText('Haz clic para ver la imagen', 0);
 infospot9.element.innerHTML = `
-  <div style="text-align: center;">
-    <img src="imagenes/panorama.jpg" alt="Panorama alterno" style="max-width: 60%; border-radius: 40px;">
-    <p style="margin-top: 10px; color: white; background-color: rgba(0,0,0,0.6); padding: 5px; border-radius: 5px; font-size: 14px;">
-      Vista panorámica desde el lago hacia la montaña, lo que verás antes de escalar.
-    </p>
+    <div style="background-color: rgba(0,0,0,0.7); color:#fff; padding: 15px; border-radius: 8px; max-width: 300px; font-size: 14px; line-height: 1.6;">
+    <img src="imagenes/panorama.jpg" alt="Alce" style="max-width: 100%; border-radius: 10px;">
+    <strong>Tendras unas vistas impresionantes:</strong><br>
+    Vista panorámica desde el lago hacia la montaña, lo que verás antes de escalar.
   </div>
 `;
 panorama.add(infospot9);
 
 // Infospot 10: Información climática
-var infospot10 = new PANOLENS.Infospot(30, PANOLENS.DataImage.Info);
+var infospot10 = new PANOLENS.Infospot(40, 'imagenes/clima.png');
 infospot10.position.set(-160, 152, -500);
 infospot10.addHoverText('Lorem ipsum dolor sit amet', 0);
 infospot10.element.innerHTML = `
