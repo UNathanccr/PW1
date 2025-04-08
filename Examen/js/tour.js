@@ -19,7 +19,7 @@ infospot1.element.innerHTML = `
 panorama.add(infospot1);
 
 // Infospot 2: Audio ambiental
-var infospot2 = new PANOLENS.Infospot(30, 'imagenes/audio.png');
+var infospot2 = new PANOLENS.Infospot(30, PANOLENS.DataImage.Info);
 infospot2.position.set(-233, -500, 500);
 infospot2.addHoverText('Lorem ipsum dolor sit amet', 0);
 infospot2.element.innerHTML = '<div style="color:#000; border-radius: 5px; padding: 90px; font-size: 14px; width: 200px;"><audio controls><source src="media/bosque.mp3" type="audio/mpeg"></audio></div>';
