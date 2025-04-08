@@ -1,25 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
-    <title>Examen - Tour Virtual 360</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="imagenes/favicon.png" rel="icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="css/tour.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen - Tour Virtual 360</title>
+    <link rel="icon" href="imagenes/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/tour.css">
     <link rel="stylesheet" href="css/portada.css">
 </head>
 
 <body>
-    <!-- encabezado -->
     <header class="fondo">
-        <h1 class="text-white text-center">Examen - Tour Virtual 360</h1>
+        <h1 class="text-white text-center">Tour Virtual 360°</h1>
     </header>
-    <!-- contenido principal -->
-    <!-- style="height: 100vh" en caso desactivar la pantalla sin encabezado/pie -->   
-    <div id="container_principal"></div>
 
-    <!-- pie de pagina  -->
+    <main>
+        <div id="container_principal"></div>
+    </main>
 
     <footer class="fondo">
         <h2 class="text-white text-center">Nathan Castillo Coto</h2>
@@ -29,12 +27,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-    <!-- librerias de Three y panolens para su funcionamiento -->
     <script src="https://pchen66.github.io/js/three/three.min.js"></script>
     <script src="https://rawgit.com/pchen66/panolens.js/dev/build/panolens.min.js"></script>
-
-    <!-- programacion del TOUR 360 -->
     <script src="js/tour.js"></script>
 </body>
 </html>

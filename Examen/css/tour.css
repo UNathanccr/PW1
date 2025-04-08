@@ -13,12 +13,7 @@ body {
     background-color: var(--light-bg);
     color: var(--text-color);
 }
-    
-#container_principal {
-    height: 100vh;    
-    /*width: 2000px;
-    height: 650px;*/
-}
+
 .cursor {
     cursor: pointer;
 }
@@ -28,98 +23,52 @@ header {
     width: 100%;
     background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-dark) 100%);
     color: white;
-} 
+}
+
 footer {
     padding: 30px;
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--dark-bg) 100%);
     color: white;
 }
-    header h1 {
+
+header h1 {
     text-align: center;
 }
-    footer h2 {
+
+footer h2 {
     text-align: center;
     font-family: Verdana;
 }
+
 .fondo {
     background-color: var(--dark-bg);
 }
 
-/* Extra Small devices (landscape phones, 576px and down)*/
+#container_principal {
+    height: 100vh;
+    max-width: 100%;
+    position: relative;
+}
+
+iframe {
+    width: 100% !important;
+}
 
 @media (max-width: 575px) {
-    #container_principal {
-        max-width: 100%;
-        /* Establece un ancho máximo para el contenedor */
-        /*height: auto;*/
-        /* Permite que la altura se ajuste automáticamente */
-        /*   overflow: hidden;*/
-        /* Evita que el contenido sobresalga del contenedor */
-        position: relative;
-        /* Ajusta la posición de los elementos internos */
-    }
-    iframe {
-        width: 100% !important;
-    }
     footer {
         position: relative;
     }
 }
 
-
-/* Small devices (landscape phones, 576px and up)*/
-
 @media (min-width: 576px) {
-    #container_principal {
-        max-width: 100%;
-        /* Establece un ancho máximo para el contenedor */
-        /*height: auto;*/
-        /* Permite que la altura se ajuste automáticamente */
-        /*overflow: hidden;*/
-        /* Evita que el contenido sobresalga del contenedor */
-        position: relative;
-        /* Ajusta la posición de los elementos internos */
-    }
-    iframe {
-        width: 100% !important;
-    }
 }
-
-
-/* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 768px) {
-    #container_principal {
-        max-width: 100%;
-        /* Establece un ancho máximo para el contenedor */
-        /*height: auto;*/
-        /* Permite que la altura se ajuste automáticamente */
-        /*overflow: hidden;*/
-        /* Evita que el contenido sobresalga del contenedor */
-        position: relative;
-        /* Ajusta la posición de los elementos internos */
-    }
-    iframe {
-        width: 100% !important;
-    }
 }
-
-
-/* Large devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
     #container_principal {
-        max-width: 100%;
-        /* Establece un ancho máximo para el contenedor */
-        /* height: auto;*/
-        /* Permite que la altura se ajuste automáticamente */
         overflow: hidden;
-        /* Evita que el contenido sobresalga del contenedor */
-        position: relative;
-        /* Ajusta la posición de los elementos internos */
-    }
-    iframe {
-        width: 100% !important;
     }
 }
 
@@ -128,20 +77,16 @@ footer {
         width: 2000px;
         height: 700px;
     }
-    header h1 {
+    
+    header h1, footer h2 {
         display: flex;
         justify-content: center;
     }
-    footer h2 {
-        display: flex;
-        justify-content: center;
-    }
-    header {
+    
+    header, footer {
         width: 100% !important;
     }
-    footer {
-        width: 100% !important;
-    }
+    
     iframe {
         width: 640px !important;
         height: 480px !important;
