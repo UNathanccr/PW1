@@ -22,7 +22,7 @@ panorama.add(infospot1);
 var infospot2 = new PANOLENS.Infospot(50, PANOLENS.DataImage.Info);
 infospot2.position.set(-233, -500, 500);
 infospot2.addHoverText('Lorem ipsum dolor sit amet');
-infospot2.element.innerHTML = '<div><audio controls><source src="media/bosque.mp3" type="audio/mpeg"></audio></div>';
+infospot2.element.innerHTML = '<div style="color:#000; border-radius: 5px; padding: 90px; font-size: 14px; width: 200px;"><audio controls><source src="media/bosque.mp3" type="audio/mpeg"></audio></div>';
 panorama.add(infospot2);
 
 // Infospot 3: Video sobre Senderismo
@@ -53,7 +53,7 @@ panorama.add(infospot4);
 var infospot5 = new PANOLENS.Infospot(50, PANOLENS.DataImage.Info);
 infospot5.position.set(372, -57, -500);
 infospot5.addHoverText('Lorem ipsum dolor sit amet', 0);
-infospot5.element.innerHTML = '<div style="background-color: rgba(0,0,0,0.7); color:#fff; padding: 90px; border-radius: 5px;">Información sobre la formación geológica del lugar.</div>';
+infospot5.element.innerHTML = '<div style="background-color: rgba(0,0,0,0.7); color:#fff; padding: 10px; border-radius: 5px;">Información sobre la formación geológica del lugar.</div>';
 panorama.add(infospot5);
 
 // Infospot 6: Video sobre actividades
@@ -123,9 +123,9 @@ viewer.add(panorama);
 // Funciones de Desarrollo
 //===========================
 //function getPosition() { 
-//    const a = viewer.raycaster.intersectObject(viewer.panorama, true)[0].point;
-//    return a;
-//};
+  //  const a = viewer.raycaster.intersectObject(viewer.panorama, true)[0].point;
+   // return a;
+// /};
 
 // Comprobar si se está sobre un infospot
 function isHovering() { 
