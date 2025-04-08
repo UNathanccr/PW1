@@ -52,8 +52,8 @@ panorama.add(infospot4);
 // Infospot 5: Información geológica
 var infospot5 = new PANOLENS.Infospot(50, PANOLENS.DataImage.Info);
 infospot5.position.set(372, -57, -500);
-infospot5.addHoverText('Lorem ipsum dolor sit amet');
-infospot5.element.innerHTML = '<div style="background-color: rgba(0,0,0,0.7); color:#fff; padding: 10px; border-radius: 5px;">Información sobre la formación geológica del lugar.</div>';
+infospot5.addHoverText('Lorem ipsum dolor sit amet', 0);
+infospot5.element.innerHTML = '<div style="background-color: rgba(0,0,0,0.7); color:#fff; padding: 90px; border-radius: 5px;">Información sobre la formación geológica del lugar.</div>';
 panorama.add(infospot5);
 
 // Infospot 6: Video sobre actividades
