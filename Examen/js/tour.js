@@ -115,7 +115,8 @@ var infospot10 = new PANOLENS.Infospot(40, 'imagenes/clima.png');
 infospot10.position.set(-160, 152, -500);
 infospot10.addHoverText('Clima del parque', 0);
 infospot10.element.innerHTML = `
-  <div style="background-color: rgba(0,0,0,0.7); color:#fff; padding: 15px; border-radius: 8px; max-width: 300px; font-size: 14px; line-height: 1.6;">
+  <div style="background-color: rgba(0,0,0,0.7); color:#fff; padding: 15px; border-radius: 8px; max-width: 500px; font-size: 14px; line-height: 1.6;">
+    <iframe src="https://api.wo-cloud.com/content/widget/?geoObjectKey=3429595&language=es&region=ES&timeFormat=HH:mm&windUnit=kmh&systemOfMeasurement=metric&temperatureUnit=celsius" frameborder="0" style="border: 1px solid #FFFFFF; border-radius: 10px; width: 100%; max-width: 100%;"> </iframe>
     <strong>Clima:</strong><br>
     Esta zona tiene un clima templado oceánico, con temperaturas suaves todo el año y lluvias frecuentes.
     <br><br>
