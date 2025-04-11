@@ -13,25 +13,28 @@
     <div class="overlay"></div>
   </section>
 
-  <section class="main-container">
-    <div class="login-container" id="loginContainer">
-      <img src="imagenes/logo.png" class="logo">
+  <section>
+    <form method="post">
+    <div class="login-container">
       <h3>Iniciar Sesión</h3>
-      <br>
-      <form id="loginForm">
-        <input type="text" id="in-txt-user" placeholder="Usuario" required>
-        <input type="password" id="in-txt-pass" placeholder="Password" required>       
-        <button type="button" id="btn-login" class="botones">Iniciar</button>
-      </form>
-    </div>
+      <img src="imagenes/logo.png" class="logo"><br>
+      <input id="in-txt-user" type="text"  placeholder="Usuario">
+      <input id="in-txt-pass" type="password" placeholder="Password">       
+      <a id="btn-login" class="botones">Ingresar</a>
+    </div>     
+    </form>
   </section>
+  
+  <!-- programacion JS -->
+  <script src="js/login.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
+
 
   <footer class="footer">
     <p>© 2025 Gimnasio | Todos los derechos reservados.</p>
   </footer>
-
-      <!-- programacion JS -->
-      <script src="js/login.js"></script>
-  
 </body>
 </html>

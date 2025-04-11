@@ -240,7 +240,7 @@ body.login {
 body.login .login-container {
   background: rgba(255, 255, 255, 0.50); /* Gris con 80% de opacidad */
   padding: 4rem;
-  border-radius: 30px;
+  border-radius: 10px;
   width: 400px;
   text-align: center;
 }
