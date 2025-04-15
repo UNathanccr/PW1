@@ -35,7 +35,7 @@ infospot3.position.set(500, 75, -250);
 infospot3.addHoverText('Beneficios del senderismo', 0);
 infospot3.element.innerHTML = `
   <div>
-    <iframe width="500" height="400" src="https://www.youtube.com/embed/Mnhf6DnECWc?si=kXKvtpxTkaQGUqb-" frameborder="0" allowfullscreen></iframe>
+    <iframe width="500" height="400" src="https://www.youtube.com/embed/jNEjw1fMk-8?si=TJbjmxO2F-nZJNTN" frameborder="0" allowfullscreen></iframe>
   </div>`;
 panorama.add(infospot3);
 
