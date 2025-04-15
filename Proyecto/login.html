@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="imagenes/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="login">
+  <div class="login-flex">
+    <section class="form-section">
+      <form method="post">
+      <div class="login-container">
+        <i class="fa-solid fa-dumbbell fa-4x" style="color: darkred;"></i> 
+        <br><br><h3 style="color: white;">Iniciar Sesión</h3><br><br>
+        <input id="in-txt-user" type="text"  placeholder="Usuario"><br><br>
+        <input id="in-txt-pass" type="password" placeholder="Contraseña"><br><br>       
+        <a id="btn-login" class="botones">Ingresar</a>
+      </div>     
+      </form>
+    </section>
+    
+    <section class="video-section">
+      <video autoplay="" loop="" muted="muted" class="video-background"><source src="video/fondo.mp4" type="video/mp4"></video>
+      <div class="overlay"></div>
+    </section>
+  </div>
+
+  <!-- programacion JS -->
+  <script src="js/login.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
+
+  <footer class="footer">
+    <p>© 2025 Gimnasio | Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
