@@ -1,42 +1,79 @@
-(function() {
-  emailjs.init("TU_USER_ID"); // Reemplaza con tu EmailJS user ID
-})();
 
-document.getElementById('form-contacto').addEventListener('submit', function(event) {
-  event.preventDefault();
+//carga de la funcion init 
+window.addEventListener('load', init, false);
 
-  emailjs.sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', this)
-    .then(function() {
-      alert('Mensaje enviado correctamente.');
-    }, function(error) {
-      alert('Error al enviar el mensaje.', error);
-    });
-});
-
-document.getElementById('form-suscripcion').addEventListener('submit', function(e) {
-  e.preventDefault();
-  alert('Gracias por suscribirte a nuestro boletín.');
-  this.reset();
-});
-
-document.getElementById('sede').addEventListener('change', function () {
-  const sede = this.value;
-  const horarioSelect = document.getElementById('horario');
-  const horarios = {
-    cartago: ["6am - 10am", "12pm - 4pm", "6pm - 10pm"],
-    san_jose: ["5am - 9am", "11am - 3pm", "5pm - 9pm"]
-  };
-
-  horarioSelect.innerHTML = '<option value="">-- Selecciona un horario --</option>';
-
-  if (horarios[sede]) {
-    horarios[sede].forEach(h => {
-      const opt = document.createElement('option');
-      opt.value = h;
-      opt.textContent = h;
-      horarioSelect.appendChild(opt);
-    });
-  }
-});
+//funcion inicial
+function init() {
+    //declaracion de
+    let nombre = document.getElementById('nombreTxt');
+    let apellido = document.getElementById('apellidoTxt');
+    let email = document.getElementById('emailTxt');
+    let numero = document.getElementById('numberTxt');
+    let mensaje = document.getElementById('mensajeTxt');
+    let alerta = document.getElementById('mensajeAlert');
+    let btnEnviar = document.getElementById('btnSend');
+    let expressionEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
 
+    //funcion del boton Enviar
+    btnEnviar.onclick = function() {
+        nombre = nombreTxt.value;
+        apellido = apellidoTxt.value;
+        email = emailTxt.value;
+        numero = numberTxt.value;
+        mensaje = mensajeTxt.value;
+
+        //condicionales anidadas para validar cada campo del form 
+        if (nombre === '' && apellido === '' && email === '' && numero === '' && mensaje === '') {
+            alerta.textContent = 'Debe llenar todos los campos.';
+            alerta.classList.add('alertaRoja');
+            alerta.classList.remove('alertaVerde');
+        } else if (nombre === '') {
+            alerta.textContent = 'El campo nombre esta vacío.';
+            alerta.classList.add('alertaRoja');
+            alerta.classList.remove('alertaVerde');
+        } else if (apellido === '') {
+            alerta.textContent = 'El campo apellido esta vacío.';
+            alerta.classList.add('alertaRoja');
+            alerta.classList.remove('alertaVerde');
+        } else if (email === '') {
+            alerta.textContent = 'El campo email esta vacío.';
+            alerta.classList.add('alertaRoja');
+            alerta.classList.remove('alertaVerde');
+        } else if (expressionEmail.test(email) === false) {
+            alerta.textContent = 'Email invalido.';
+            alerta.classList.add('alertaRoja');
+            alerta.classList.remove('alertaVerde');
+        } else if (numero === '') {
+            alerta.textContent = 'El campo teléfono esta vacío.';
+            alerta.classList.add('alertaRoja');
+            alerta.classList.remove('alertaVerde');
+
+        } else if (mensaje === '') {
+            alerta.textContent = 'El campo mensaje esta vacío.';
+            alerta.classList.add('alertaRoja');
+            alerta.classList.remove('alertaVerde');
+
+        } else {
+            //si NO existe error en los campos validados se envian los datos al servidor de correo 
+            alerta.textContent = 'Mensaje enviado. Pronto le confirmamos!';
+            alerta.classList.add('alertaVerde');
+            alerta.classList.remove('alertaRoja');
+            //service ID/template ID/ID form/public key cuenta
+            //el id del formulario es #form
+            emailjs.sendForm('service_3fk6nq4', 'template_r4ei7jn', '#form1', 'tqSiJQcc2djc-3GDH');
+            //carga de la funcion limpiar
+            limpiar();
+        }
+
+    }
+
+
+    function limpiar() {
+        nombreTxt.value = '';
+        apellidoTxt.value = '';
+        emailTxt.value = '';
+        numberTxt.value = '';
+        mensajeTxt.value = '';
+    }
+}
