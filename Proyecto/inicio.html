@@ -48,20 +48,21 @@
       <section class="section" id="planes">
         <h2>Nuestros Planes</h2>
         <div class="plan-container">
+          <!-- Plan Estudiante -->
           <div class="plan">
-            <h3>Plan Básico</h3>
+            <h3>Plan Estudiante</h3>
             <p class="precio">₡25,000/mes</p>
             <ul>
               <li>Acceso a sala de máquinas</li>
-              <li>Horario: 6am - 10pm</li>
+              <li>Horario: 10am - 2pm</li>
               <li>Evaluación física inicial</li>
               <li>Vestidores y duchas</li>
             </ul>
-            <button class="botones">Elegir Plan</button>
+            <a href="#formularios" class="botones">Más información</a>
           </div>
-          
-          <div class="plan destacado">
-            <h3>Plan Premium</h3>
+          <!-- Plan Estandar -->
+          <div class="plan">
+            <h3>Plan Estándar</h3>
             <p class="precio">₡45,000/mes</p>
             <ul>
               <li>Acceso total a instalaciones</li>
@@ -70,10 +71,10 @@
               <li>Seguimiento nutricional básico</li>
               <li>Acceso a aplicación móvil</li>
             </ul>
-            <button class="botones">Elegir Plan</button>
+            <a href="#formularios" class="botones">Más información</a>
           </div>
-          
-          <div class="plan">
+          <!-- Plan Elite -->
+          <div class="plan destacado">
             <h3>Plan Elite</h3>
             <p class="precio">₡65,000/mes</p>
             <ul>
@@ -83,7 +84,7 @@
               <li>Acceso a área VIP</li>
               <li>1 masaje deportivo mensual</li>
             </ul>
-            <button class="botones">Elegir Plan</button>
+            <a href="#formularios" class="botones">Más información</a>
           </div>
         </div>
       </section>
@@ -93,16 +94,25 @@
         <h2>Nuestro Equipo de Entrenadores</h2>
         <div class="entrenadores-container">
           <div class="entrenador">
+            <div class="foto-entrenador">
+              <img src="https://png.pngtree.com/png-clipart/20230823/original/pngtree-anonymous-user-unknown-faceless-vector-picture-image_8241754.png" alt="Carlos Jiménez">
+            </div>
             <h3>Carlos Jiménez</h3>
             <p class="especialidad">Especialista en Hipertrofia</p>
             <p>Certificado en Fisiología del Ejercicio con más de 10 años de experiencia en entrenamiento de fuerza y programas de ganancia muscular.</p>
           </div>
           <div class="entrenador">
+            <div class="foto-entrenador">
+              <img src="https://png.pngtree.com/png-clipart/20230823/original/pngtree-anonymous-user-unknown-faceless-vector-picture-image_8241754.png" alt="María Sánchez">
+            </div>
             <h3>María Sánchez</h3>
             <p class="especialidad">Experta en Nutrición Deportiva</p>
             <p>Nutricionista deportiva especializada en planes de alimentación personalizados para diferentes objetivos fitness y optimización del rendimiento.</p>
           </div>
           <div class="entrenador">
+            <div class="foto-entrenador">
+              <img src="https://png.pngtree.com/png-clipart/20230823/original/pngtree-anonymous-user-unknown-faceless-vector-picture-image_8241754.png" alt="Roberto Gómez">
+            </div>
             <h3>Roberto Gómez</h3>
             <p class="especialidad">Instructor de Crossfit</p>
             <p>Atleta certificado nivel 3 en CrossFit con especialización en entrenamiento funcional de alta intensidad y preparación para competiciones.</p>
@@ -131,6 +141,86 @@
         </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167728.61688217928!2d-84.22063792164708!3d10.019307133510152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e3df4491ab35%3A0x856139030be49f97!2sMomentum%20Pinares!5e0!3m2!1ses!2spa!4v1740420161396!5m2!1ses!2spa" width="600" height="300" style="border:0;" ></iframe>
       </section>
+
+      <!-- Nuestras Instalaciones -->
+      <section class="section" id="video">
+        <h2>Nuestras Instalaciones</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/g3ZNprweps0?si=4sIqUvlLaSAXIlQn&amp;start=15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </section>
+      
+      <!-- Combos Programados -->
+      <section class="section" id="formularios">
+        <h2>Programa tu Experiencia Fitness</h2>
+        
+        <form id="fitness-form" class="formulario-contacto">
+          <!-- Simple -->
+          <div class="form-group">
+            <label for="entrenamiento">¿Qué tipo de entrenamiento te interesa?</label>
+            <select id="entrenamiento" name="entrenamiento">
+              <option value="">-- Selecciona --</option>
+              <option value="pesas">Entrenamiento con pesas</option>
+              <option value="cardio">Cardio y resistencia</option>
+              <option value="crossfit">CrossFit</option>
+              <option value="funcional">Entrenamiento funcional</option>
+              <option value="hiit">HIIT (Alta intensidad)</option>
+            </select>
+          </div>
+
+          <!-- Combinado -->
+          <div class="form-group">
+            <label for="plan">Selecciona tu plan de membresía:</label>
+            <select id="plan" onchange="cargarHorarios(); actualizarEntrenador()">
+              <option value="">-- Selecciona un plan --</option>
+              <option value="basico">Estudiante - ₡25,000/mes</option>
+              <option value="premium">Estandar - ₡45,000/mes</option>
+              <option value="elite">Elite - ₡65,000/mes</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="horario">Horario preferido:</label>
+            <select id="horario">
+              <option value="">-- Selecciona un plan primero --</option>
+            </select>
+            <p class="info-plan" id="horario-info" style="display: none; margin-top: 10px;"></p>
+          </div>
+
+          <!-- Entrenador asignado (basado en preferencias) -->
+          <div class="form-group" id="entrenador-section" style="display: none;">
+            <label>Entrenador recomendado:</label>
+            <div class="entrenador-recomendado" id="entrenador-info"></div>
+          </div>
+
+          <!-- Interactivo -->
+          <div class="form-group">
+            <label for="objetivo">Tu objetivo principal:</label>
+            <select id="objetivo" onchange="mostrarOtroObjetivo(); actualizarRecomendaciones()">
+              <option value="">-- Selecciona --</option>
+              <option value="perderpeso">Perder peso</option>
+              <option value="ganarmusculo">Ganar músculo</option>
+              <option value="rendimiento">Mejorar rendimiento</option>
+              <option value="salud">Salud general</option>
+              <option value="otro">Otro objetivo</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="campo-otro" style="display: none;">
+            <label for="otroObjetivo">Especifica tu objetivo:</label>
+            <input type="text" id="otroObjetivo" name="otroObjetivo">
+          </div>
+
+          <!-- Recomendaciones personalizadas basadas en selecciones -->
+          <div class="form-group" id="recomendaciones" style="display: none; margin-top: 20px;">
+            <h3>Recomendaciones personalizadas</h3>
+            <p id="recomendacion-texto"></p>
+          </div>
+
+          <!-- Botón de envío -->
+          <div class="form-group" style="margin-top: 30px;">
+            <button type="button" class="botones" onclick="procesarFormulario()">Programar Consulta</button>
+          </div>
+        </form>
+      </section>
     </div>
   </main>
 
@@ -156,16 +246,15 @@
     </div>
   </footer>
 
+  <!-- Script Formuario Interactivo -->
+  <script src="js/combprog.js"></script>
+
   <script src="js/plan.js"></script>
 
-     <!-- LIBRERIA EMAIL.JS -->
-     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-   
+  <!-- LIBRERIA EMAIL.JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-     <!-- PROGRAMACION FORM JS -->
-     <script src="js/contacto.js"></script>
-
-   
-
+  <!-- PROGRAMACION FORM JS -->
+  <script src="js/contacto.js"></script>
 </body>
 </html>
