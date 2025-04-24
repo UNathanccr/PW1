@@ -61,7 +61,7 @@ function init() {
             alerta.classList.remove('alertaRoja');
             //service ID/template ID/ID form/public key cuenta
             //el id del formulario es #form
-            emailjs.sendForm('service_j79fepy', 'template_a2zgzqj', '#form1', 'hnv2YJGEfUoGxcfgEVS1I');
+            emailjs.sendForm('service_j79fepy', 'template_a2zgzqj', '#form1', '2IIMj-dN305Vw_6cq');
             //carga de la funcion limpiar
             limpiar();
         }
