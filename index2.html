@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solución Inteligente - Tecnologías Emergentes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: #334155;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: rotate 25s linear infinite;
+    }
+
+    .tech-icons {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .tech-icon {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.1;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .tech-icon:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .tech-icon:nth-child(2) { top: 30%; right: 15%; animation-delay: 1s; }
+    .tech-icon:nth-child(3) { bottom: 25%; left: 20%; animation-delay: 2s; }
+    .tech-icon:nth-child(4) { top: 50%; right: 25%; animation-delay: 3s; }
+    .tech-icon:nth-child(5) { bottom: 15%; right: 10%; animation-delay: 4s; }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-15px) scale(1.1); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      padding: 8px 20px;
+      border-radius: 50px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: fadeInUp 1s ease-out;
+      background: linear-gradient(135deg, #ffffff, #93c5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease-out 0.2s both;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tech-showcase {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+      animation: fadeInUp 1s ease-out 0.4s both;
+      flex-wrap: wrap;
+    }
+
+    .tech-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-align: center;
+      transition: all 0.3s ease;
+      min-width: 120px;
+    }
+
+    .tech-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .tech-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .tech-card-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: -80px auto 0;
+      padding: 0 20px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .objective-card {
+      background: white;
+      border-radius: 30px;
+      padding: 50px;
+      margin-bottom: 40px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .objective-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, #3b82f6, #0ea5e9, #64748b, #475569);
+    }
+
+    .objective-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      color: #3b82f6;
+    }
+
+    .objective-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 20px;
+    }
+
+    .objective-description {
+      font-size: 1.2rem;
+      color: #475569;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .management-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .management-card {
+      background: white;
+      border-radius: 25px;
+      padding: 35px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border-top: 6px solid transparent;
+    }
+
+    .management-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    }
+
+    .management-card.quality { border-top-color: #10b981; }
+    .management-card.hr { border-top-color: #8b5cf6; }
+    .management-card.communication { border-top-color: #f59e0b; }
+    .management-card.risk { border-top-color: #ef4444; }
+    .management-card.procurement { border-top-color: #06b6d4; }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-right: 15px;
+      padding: 12px;
+      border-radius: 15px;
+      color: white;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quality .card-icon { background: linear-gradient(135deg, #10b981, #059669); }
+    .hr .card-icon { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+    .communication .card-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .risk .card-icon { background: linear-gradient(135deg, #ef4444, #dc2626); }
+    .procurement .card-icon { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .subsection {
+      margin-bottom: 25px;
+      padding: 20px;
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      border-radius: 15px;
+      border-left: 4px solid #3b82f6;
+    }
+
+    .subsection-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    .subsection-title::before {
+      content: '●';
+      color: #3b82f6;
+      margin-right: 8px;
+      font-size: 1.2rem;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .metric-item {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid #e2e8f0;
+      transition: all 0.3s ease;
+    }
+
+    .metric-item:hover {
+      border-color: #3b82f6;
+      transform: scale(1.05);
+    }
+
+    .metric-value {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 5px;
+    }
+
+    .role-list, .strategy-list, .risk-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .role-list li, .strategy-list li, .risk-list li {
+      margin-bottom: 10px;
+      padding: 12px 15px;
+      background: white;
+      border-radius: 10px;
+      border-left: 3px solid #3b82f6;
+      transition: all 0.3s ease;
+    }
+
+    .role-list li:hover, .strategy-list li:hover, .risk-list li:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .role-title {
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .risk-card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      border-left: 5px solid #ef4444;
+      transition: all 0.3s ease;
+    }
+
+    .risk-card:hover {
+      transform: translateX(8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .risk-header {
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .risk-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .risk-detail {
+      text-align: center;
+      padding: 8px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    .impact-high { background: #fee2e2; color: #991b1b; }
+    .impact-very-high { background: #fecaca; color: #7f1d1d; }
+    .probability-medium { background: #fef3c7; color: #92400e; }
+    .probability-high { background: #fed7aa; color: #9a3412; }
+
+    .procurement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .procurement-item {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      border: 2px solid #e2e8f0;
+      transition: all 0.3s ease;
+    }
+
+    .procurement-item:hover {
+      border-color: #06b6d4;
+      transform: translateY(-3px);
+    }
+
+    .procurement-title {
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      background: #1e293b;
+      color: white;
+      text-align: center;
+      padding: 40px;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-subtitle {
+      font-size: 1rem;
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+
+    .footer-badge {
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+      padding: 8px 20px;
+      border-radius: 50px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      
+      .tech-showcase {
+        gap: 15px;
+      }
+      
+      .management-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .objective-card, .management-card {
+        padding: 25px;
+      }
+    }
+
+    .context-section {
+      background: linear-gradient(135deg, #dbeafe, #f1f5f9);
+      border-radius: 25px;
+      padding: 40px;
+      margin: 40px 0;
+      border: 2px solid #bfdbfe;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .context-section::before {
+      content: '🏢';
+      position: absolute;
+      font-size: 8rem;
+      opacity: 0.1;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+    }
+
+    .context-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .context-icon {
+      font-size: 2.5rem;
+      margin-right: 15px;
+      color: #3b82f6;
+    }
+
+    .context-description {
+      font-size: 1.1rem;
+      color: #475569;
+      line-height: 1.8;
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-section">
+    <div class="tech-icons">
+      <div class="tech-icon">🤖</div>
+      <div class="tech-icon">📊</div>
+      <div class="tech-icon">🌐</div>
+      <div class="tech-icon">📜</div>
+      <div class="tech-icon">🧠</div>
+    </div>
+    
+    <div class="hero-content">
+      <div class="hero-badge">PROYECTO INNOVADOR</div>
+      <h1 class="hero-title">Solución Inteligente</h1>
+      <p class="hero-subtitle">Diseño basado en Tecnologías Emergentes para transformar el futuro empresarial</p>
+      
+      <div class="tech-showcase">
+        <div class="tech-card">
+          <span class="tech-card-icon">🤖</span>
+          <div class="tech-card-label">Inteligencia Artificial</div>
+        </div>
+        <div class="tech-card">
+          <span class="tech-card-icon">📊</span>
+          <div class="tech-card-label">Big Data</div>
+        </div>
+        <div class="tech-card">
+          <span class="tech-card-icon">🌐</span>
+          <div class="tech-card-label">Internet de las Cosas</div>
+        </div>
+        <div class="tech-card">
+          <span class="tech-card-icon">📜</span>
+          <div class="tech-card-label">Smart Contracts</div>
+        </div>
+        <div class="tech-card">
+          <span class="tech-card-icon">🧠</span>
+          <div class="tech-card-label">Machine Learning</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Objetivo General -->
+    <div class="objective-card">
+      <div class="objective-icon">🎯</div>
+      <h2 class="objective-title">Objetivo General</h2>
+      <p class="objective-description">
+        Aplicar los conocimientos en administración de proyectos mediante la simulación de una solución tecnológica innovadora que integre tecnologías emergentes para resolver problemas reales en diversos sectores empresariales.
+      </p>
+    </div>
+
+    <!-- Contexto del Proyecto -->
+    <div class="context-section">
+      <h2 class="context-title">
+        <span class="context-icon">🏢</span>
+        Contexto del Proyecto
+      </h2>
+      <p class="context-description">
+        Un equipo multidisciplinario ha sido contratado por una empresa líder en su sector (educativo, salud, logística, agrícola, etc.) para desarrollar una <strong>solución inteligente que resuelva un problema real</strong> utilizando una o más tecnologías emergentes de vanguardia.
+      </p>
+    </div>
+
+    <!-- Grid de Administración -->
+    <div class="management-grid">
+      <!-- Administración de la Calidad -->
+      <div class="management-card quality">
+        <div class="card-header">
+          <div class="card-icon">✅</div>
+          <h3 class="card-title">Administración de la Calidad</h3>
+        </div>
+        
+        <div class="subsection">
+          <h4 class="subsection-title">Estándares de Calidad</h4>
+          <div class="metric-grid">
+            <div class="metric-item">
+              <div class="metric-value">≥ 90%</div>
+              <div class="metric-label">Precisión IA</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">< 2 seg</div>
+              <div class="metric-label">Tiempo Respuesta</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value">99.5%</div>
+              <div class="metric-label">Disponibilidad</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h4 class="subsection-title">Mecanismos de Control</h4>
+          <ul class="strategy-list">
+            <li>Pruebas unitarias y de integración</li>
+            <li>Revisión por pares (peer review)</li>
+            <li>Auditorías técnicas periódicas</li>
+            <li>Monitoreo continuo del desempeño</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Recursos Humanos -->
+      <div class="management-card hr">
+        <div class="card-header">
+          <div class="card-icon">👥</div>
+          <h3 class="card-title">Recursos Humanos & Equipos</h3>
+        </div>
+        
+        <div class="subsection">
+          <h4 class="subsection-title">Roles Asignados</h4>
+          <ul class="role-list">
+            <li><span class="role-title">Líder del Proyecto</span></li>
+            <li><span class="role-title">Científico de Datos</span></li>
+            <li><span class="role-title">Desarrollador Full-Stack</span></li>
+            <li><span class="role-title">Especialista QA</span></li>
+            <li><span class="role-title">Experto en Tecnologías Emergentes</span></li>
+          </ul>
+        </div>
+
+        <div class="subsection">
+          <h4 class="subsection-title">Estrategias de Colaboración</h4>
+          <ul class="strategy-list">
+            <li>Reuniones semanales de sincronización</li>
+            <li>Herramientas colaborativas (Slack, Teams)</li>
+            <li>Rotación de tareas para aprendizaje cruzado</li>
+            <li>Talleres de trabajo en equipo</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Comunicaciones -->
+      <div class="management-card communication">
+        <div class="card-header">
+          <div class="card-icon">📢</div>
+          <h3 class="card-title">Administración de Comunicaciones</h3>
+        </div>
+        
+        <div class="subsection">
+          <h4 class="subsection-title">Plan de Comunicación Interna</h4>
+          <ul class="strategy-list">
+            <li><strong>Reuniones de avance:</strong> Semanales</li>
+            <li><strong>Reportes de estado:</strong> Quincenales</li>
+            <li><strong>Herramientas:</strong> Teams, Trello, Drive</li>
+          </ul>
+        </div>
+
+        <div class="subsection">
+          <h4 class="subsection-title">Comunicación Externa</h4>
+          <ul class="strategy-list">
+            <li>Presentación mensual a stakeholders</li>
+            <li>Informes ejecutivos a dirección</li>
+            <li>Canal de contacto con cliente (CRM)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Gestión de Riesgos -->
+      <div class="management-card risk">
+        <div class="card-header">
+          <div class="card-icon">⚠️</div>
+          <h3 class="card-title">Administración del Riesgo</h3>
+        </div>
+        
+        <div class="risk-card">
+          <div class="risk-header">🔧 Fallos en sensores IoT</div>
+          <div class="risk-details">
+            <div class="risk-detail impact-high">Impacto: Alto</div>
+            <div class="risk-detail probability-medium">Prob: Media</div>
+          </div>
+          <div style="margin-top: 10px; font-size: 0.9rem; color: #475569;">
+            <strong>Mitigación:</strong> Doble capa de redundancia, pruebas piloto
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-header">🧠 Sesgos en modelos de IA</div>
+          <div class="risk-details">
+            <div class="risk-detail impact-very-high">Impacto: Muy Alto</div>
+            <div class="risk-detail probability-high">Prob: Alta</div>
+          </div>
+          <div style="margin-top: 10px; font-size: 0.9rem; color: #475569;">
+            <strong>Mitigación:</strong> Validación con datos balanceados y revisión ética
+          </div>
+        </div>
+
+        <div class="risk-card">
+          <div class="risk-header">⚖️ Problemas legales por datos</div>
+          <div class="risk-details">
+            <div class="risk-detail impact-high">Impacto: Alto</div>
+            <div class="risk-detail probability-medium">Prob: Media</div>
+          </div>
+          <div style="margin-top: 10px; font-size: 0.9rem; color: #475569;">
+            <strong>Mitigación:</strong> Cumplimiento GDPR, asesoría legal
+          </div>
+        </div>
+      </div>
+
+      <!-- Compras y Adquisiciones -->
+      <div class="management-card procurement">
+        <div class="card-header">
+          <div class="card-icon">🛒</div>
+          <h3 class="card-title">Compras & Adquisiciones</h3>
+        </div>
+        
+        <div class="subsection">
+          <h4 class="subsection-title">Recursos a Adquirir</h4>
+          <div class="procurement-grid">
+            <div class="procurement-item">
+              <div class="procurement-title">🌐 Sensores IoT</div>
+              <div style="font-size: 0.9rem; color: #64748b;">Hardware inteligente</div>
+            </div>
+            <div class="procurement-item">
+              <div class="procurement-title">☁️ Cloud Services</div>
+              <div style="font-size: 0.9rem; color: #64748b;">AWS, Azure storage</div>
+            </div>
+            <div class="procurement-item">
+              <div class="procurement-title">💻 Licencias Software</div>
+              <div style="font-size: 0.9rem; color: #64748b;">MATLAB, Python, AutoML</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h4 class="subsection-title">Criterios de Selección</h4>
+          <ul class="strategy-list">
+            <li>Costo-beneficio optimizado</li>
+            <li>Soporte técnico y actualizaciones</li>
+            <li>Reputación y experiencia previa</li>
+            <li>Cumplimiento de estándares de seguridad</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">Tecnologías Emergentes</div>
+      <p class="footer-subtitle">Innovación y Administración de Proyectos del Futuro</p>
+      <div class="footer-badge">BITIC-32 | Administración de Proyectos I</div>
+    </div>
+  </div>
+</body>
+</html>
