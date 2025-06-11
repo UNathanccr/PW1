@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sistema de Riego Inteligente - AgriTech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
     /* =============================================================================
        IMPORTACIÓN DE FUENTES Y RESET CSS
@@ -350,7 +352,10 @@
     .management-card.hr { border-top-color: #7c3aed; }
     .management-card.communication { border-top-color: #f59e0b; }
     .management-card.risk { border-top-color: #dc2626; }
-    .management-card.procurement { border-top-color: #0891b2; }
+    .management-card.procurement { 
+      border-top-color: #0891b2;
+      grid-column: 1 / -1;
+    }
 
     /* =============================================================================
        HEADERS DE CARDS
@@ -550,22 +555,21 @@
       margin-top: 20px;
     }
 
+    .matrix-header,
+    .matrix-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+    }
     .matrix-header {
       background: linear-gradient(135deg, #f59e0b, #d97706);
       color: white;
       padding: 15px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      gap: 15px;
       font-weight: 700;
       font-size: 0.9rem;
     }
-
     .matrix-row {
       padding: 15px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      gap: 15px;
       border-bottom: 1px solid #f1f5f9;
       transition: all 0.3s ease;
       font-size: 0.9rem;
@@ -661,7 +665,7 @@
     ============================================================================= */
     .procurement-showcase {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 25px;
       margin-top: 25px;
     }
@@ -674,6 +678,12 @@
       transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 10px;
     }
 
     .procurement-item::before {
@@ -711,7 +721,8 @@
       color: #0f172a;
       margin-bottom: 10px;
       font-size: 1.1rem;
-      text-align: center;
+      text-align: left;
+      width: 100%;
       position: relative;
       z-index: 2;
     }
@@ -719,7 +730,8 @@
     .procurement-description {
       font-size: 0.95rem;
       color: #6b7280;
-      text-align: center;
+      text-align: left;
+      width: 100%;
       position: relative;
       z-index: 2;
     }
@@ -846,11 +858,6 @@
         gap: 10px;
       }
 
-      .matrix-header, .matrix-row {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
       .project-overview {
         padding: 30px;
       }
@@ -899,13 +906,22 @@
       transform: translateX(5px);
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- =============================================================================
        SECCIÓN HERO
   ============================================================================= -->
-  <div class="hero-section">
+  <header class="hero-section" role="banner">
     <div class="floating-elements">
       <div class="floating-element">💧</div>
       <div class="floating-element">🌱</div>
@@ -943,12 +959,12 @@
         </div>
       </div>
     </div>
-  </div>
+  </header><br><br><br><br><br><br>
 
   <!-- =============================================================================
        CONTENEDOR PRINCIPAL
   ============================================================================= -->
-  <div class="container">
+  <main class="container" role="main">
     <!-- Resumen del Proyecto -->
     <div class="project-overview">
       <h2 class="overview-title">🎯 Objetivo del Proyecto</h2>
@@ -1294,18 +1310,18 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
   <!-- =============================================================================
        FOOTER
   ============================================================================= -->
-  <div class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer-content">
       <div class="footer-logo">Sistema de Riego Inteligente</div>
       <p class="footer-tagline">Optimizando la Agricultura con IA, IoT y Machine Learning</p>
       <div class="footer-badge">BITIC-32 | Trabajo en Clase No. 3</div>
     </div>
-  </div>
+  </footer>
 
 </body>
 </html>
